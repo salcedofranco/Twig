@@ -20,9 +20,7 @@ echo $twig->render('index', $params );
 
 // METODO COMPACT PHP
 
-$agregado = 'lalala';
-
 $name = 'Franco Salcedo';
-$saludo = 'desde metodo compact ' .  $agregado;
+$saludo = 'desde metodo compact ';
 
 echo $twig->render('index' , compact('name' , 'saludo'));
