@@ -1,3 +1,6 @@
+{# Asi se define una variable en twig y esta sintaxis es la correcta para los comentarios #}
+{% set num = '888' %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +13,8 @@
     <h1>Hola {{ name }}, {{ saludo }}</h1>
 
     <h2 style="color:red">{{ vista }}</h2>
+
+    <h3> Numero: {{ num }}</h3>
     
 </body>
 </html>
