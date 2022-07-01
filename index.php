@@ -2,25 +2,16 @@
 
 require_once './vendor/autoload.php';
 
-$loader = new \Twig\Loader\ArrayLoader([
-    'index' => 'Hello {{ name }} {{ saludo }}!',
-]);
-$twig = new \Twig\Environment($loader);
+//version 1: new Twig_Loader_Filesystem
+$loader = new \Twig\Loader\FilesystemLoader('./views');
 
-/*
-$params = [
-    'name' => 'Franklin',
-    'saludo' => 'bienvenido a twig desde params'
-];
+//version 1: new Twig_Environment
+$twig = new \Twig\Environment($loader, []);
 
-//Primer ECHO echo $twig->render('index', ['name' => 'Franklin', 'saludo' => 'bienvenido a twig']);
 
-echo $twig->render('index', $params );
-*/
+$name = 'Franco';
+$saludo = 'te damos la bienvenida ';
+$vista = 'Estamos renderizando la vista desde otro archivo';
 
-// METODO COMPACT PHP
 
-$name = 'Franco Salcedo';
-$saludo = 'desde metodo compact ';
-
-echo $twig->render('index' , compact('name' , 'saludo'));
+echo $twig->render('index.twig' , compact('name' , 'saludo' , 'vista'));
